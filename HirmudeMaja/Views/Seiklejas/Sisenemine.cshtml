@@ -1,0 +1,36 @@
+﻿@model IEnumerable<HirmudeMaja.Models.Seikleja>
+
+    @{
+        ViewData["Title"] = "Sisenemine";
+    }
+
+    <h1>Sisenemine</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Eesnimi)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Eesnimi)
+                    </td>
+                    <td>
+                        <a asp-action="SisestaSeikleja" asp-route-id="@item.Id">Sisene</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
