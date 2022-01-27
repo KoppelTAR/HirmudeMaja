@@ -4,14 +4,16 @@ using HirmudeMaja.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HirmudeMaja.Migrations
 {
     [DbContext(typeof(HirmudeMajaContext))]
-    partial class HirmudeMajaContextModelSnapshot : ModelSnapshot
+    [Migration("20220127072036_nonuniquenames")]
+    partial class nonuniquenames
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

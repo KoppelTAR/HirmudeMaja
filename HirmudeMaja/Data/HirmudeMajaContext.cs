@@ -14,8 +14,8 @@ namespace HirmudeMaja.Data
             base.OnModelCreating(builder);
 
             builder.Entity<Seikleja>()
-                .HasIndex(e => new { e.Eesnimi })
-                .IsUnique();
+                .HasIndex(e => new { e.Eesnimi });
+
         }
         public HirmudeMajaContext(DbContextOptions<HirmudeMajaContext> options)
             : base(options)

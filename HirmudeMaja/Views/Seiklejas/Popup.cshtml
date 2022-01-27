@@ -1,0 +1,12 @@
+﻿@model HirmudeMaja.Models.Seikleja
+
+@{
+    ViewData["Title"] = "Popup";
+}
+
+<div>
+    <h1>@Html.DisplayFor(model => model.Eesnimi) Teie Id on @Html.DisplayFor(model => model.Id)</h1>
+</div>
+<div>
+    <a asp-action="Sisenemine">Sisenemis lehele</a>
+</div>

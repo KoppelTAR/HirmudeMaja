@@ -35,7 +35,7 @@ namespace HirmudeMaja.Controllers
             {
                 _context.Add(seikleja);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Popup),seikleja);
             }
             return View(seikleja);
         }
@@ -124,14 +124,38 @@ namespace HirmudeMaja.Controllers
             return RedirectToAction(nameof(Väljumine));
         }
 
-        public async Task<IActionResult> Index()
+
+        // GET: Seiklejas
+        public async Task<IActionResult> StatistikaLeht()
         {
             return View(await _context.Seikleja.ToListAsync());
         }
 
+        public async Task<IActionResult> MajasOlevadSeiklejad()
+        {
+            var model = _context.Seikleja.Where(e => e.Väljumisaeg == null && e.Sisenemisaeg != null);
+            return View(await model.ToListAsync());
+        }
 
-        // GET: Seiklejas
-        public async Task<IActionResult> StatistikaLeht()
+        public async Task<IActionResult> Popup(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var seikleja = await _context.Seikleja
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (seikleja == null)
+            {
+                return NotFound();
+            }
+
+            return View(seikleja);
+        }
+
+
+        public async Task<IActionResult> Index()
         {
             return View(await _context.Seikleja.ToListAsync());
         }
