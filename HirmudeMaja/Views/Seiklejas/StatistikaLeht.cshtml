@@ -10,9 +10,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Sisenemisaeg)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
@@ -20,6 +17,12 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Väljumisaeg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Väljumisaeg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vahemik)
             </th>
             <th></th>
         </tr>
@@ -29,16 +32,19 @@
         {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Sisenemisaeg)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Eesnimi)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Sisenemisaeg)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Väljumisaeg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vahemik)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

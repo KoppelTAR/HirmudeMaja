@@ -97,6 +97,7 @@ namespace HirmudeMaja.Controllers
             if (seikleja.Väljumisaeg == null && seikleja.Sisenemisaeg != null)
             {
                 seikleja.Väljumisaeg = $"{DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}";
+                seikleja.Vahemik = DateTime.Parse(seikleja.Väljumisaeg).Subtract(DateTime.Parse(seikleja.Sisenemisaeg));
             }
             else
             {
@@ -124,7 +125,7 @@ namespace HirmudeMaja.Controllers
 
         public async Task<IActionResult> StatistikaLeht()
         {
-            return View(await _context.Seikleja.OrderBy(e => e.Sisenemisaeg).ToListAsync());
+            return View(await _context.Seikleja.OrderBy(e => e.Väljumisaeg).ToListAsync());
         }
 
         public async Task<IActionResult> MajasOlevadSeiklejad()

@@ -14,6 +14,7 @@ namespace HirmudeMaja.Models
         public string Eesnimi { get; set; }
         public string Sisenemisaeg { get; set; }
         public string Väljumisaeg { get; set; }
+        public TimeSpan Vahemik { get; set; }
 
     }
 }
