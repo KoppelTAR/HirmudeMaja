@@ -3,14 +3,16 @@ using HirmudeMaja.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HirmudeMaja.Migrations
 {
     [DbContext(typeof(HirmudeMajaContext))]
-    partial class HirmudeMajaContextModelSnapshot : ModelSnapshot
+    [Migration("20220201112102_DateToStringForSisenemisaeg")]
+    partial class DateToStringForSisenemisaeg
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

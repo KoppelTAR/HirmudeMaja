@@ -12,8 +12,8 @@ namespace HirmudeMaja.Models
         [StringLength(64)]
         [Required]
         public string Eesnimi { get; set; }
-        public DateTime? Sisenemisaeg { get; set; }
-        public DateTime? Väljumisaeg { get; set; }
+        public string Sisenemisaeg { get; set; }
+        public string Väljumisaeg { get; set; }
 
     }
 }

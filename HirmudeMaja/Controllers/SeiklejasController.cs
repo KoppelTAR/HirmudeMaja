@@ -55,8 +55,7 @@ namespace HirmudeMaja.Controllers
             }
             if (seikleja.Sisenemisaeg == null)
             {
-                seikleja.Sisenemisaeg = DateTime.Now;
-                seikleja.Väljumisaeg = null;
+                seikleja.Sisenemisaeg = $"{DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}";
             }
             else
             {
@@ -97,8 +96,7 @@ namespace HirmudeMaja.Controllers
             }
             if (seikleja.Väljumisaeg == null && seikleja.Sisenemisaeg != null)
             {
-                seikleja.Väljumisaeg = DateTime.Now;
-                seikleja.Sisenemisaeg = null;
+                seikleja.Väljumisaeg = $"{DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}";
             }
             else
             {
@@ -124,8 +122,6 @@ namespace HirmudeMaja.Controllers
             return RedirectToAction(nameof(Väljumine));
         }
 
-
-        // GET: Seiklejas
         public async Task<IActionResult> StatistikaLeht()
         {
             return View(await _context.Seikleja.ToListAsync());
