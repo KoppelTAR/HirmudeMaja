@@ -9,7 +9,7 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #5bc0de;
 }
 
 .btn-primary {
@@ -68,4 +68,16 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    padding-right: 1rem;
+    margin-right: auto;
+    width: 10%;
+}
+
+.table {
+    color: #f0ad4e;
 }
