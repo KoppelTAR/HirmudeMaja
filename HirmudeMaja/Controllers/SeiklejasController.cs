@@ -243,7 +243,7 @@ namespace HirmudeMaja.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(StatistikaLeht));
             }
             return View(seikleja);
         }
@@ -274,7 +274,7 @@ namespace HirmudeMaja.Controllers
             var seikleja = await _context.Seikleja.FindAsync(id);
             _context.Seikleja.Remove(seikleja);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(StatistikaLeht));
         }
 
         private bool SeiklejaExists(int id)
