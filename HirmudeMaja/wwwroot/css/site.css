@@ -81,3 +81,23 @@ img {
 .table {
     color: #f0ad4e;
 }
+
+hr {
+    border: 1px solid #f0ad4e
+}
+
+.table thead th {
+    border-bottom: 2px solid #f0ad4e
+}
+
+.table td, .table th {
+    border-top: 1px solid #f0ad4e
+}
+
+.border-top {
+    border-top: 1px solid #f0ad4e !important
+}
+
+.border-bottom {
+    border-bottom: 1px solid #f0ad4e !important
+}
