@@ -125,7 +125,7 @@ namespace HirmudeMaja.Controllers
 
         public async Task<IActionResult> StatistikaLeht()
         {
-            return View(await _context.Seikleja.OrderBy(e => e.Väljumisaeg).ToListAsync());
+            return View(await _context.Seikleja.OrderByDescending(e => e.Sisenemisaeg).ThenBy(e => e.Väljumisaeg).ThenBy(e => e.Eesnimi).ToListAsync());
         }
 
         public async Task<IActionResult> MajasOlevadSeiklejad()
